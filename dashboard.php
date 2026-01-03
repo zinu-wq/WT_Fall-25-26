@@ -49,22 +49,7 @@
 
   <h2>Guest Dashboard</h2>
 
-  <form id="guestForm" onsubmit="return handleDashboard()">
-    <label>Name:</label>
-    <input type="text" id="name" placeholder="Enter your name" /><br>
-
-    <label>Email:</label>
-    <input type="email" id="email" placeholder="Enter your email" /><br>
-
-    <label>Phone:</label>
-    <input type="text" id="phone" placeholder="Enter your phone number" /><br>
-
-    <button type="submit">Go to Dashboard</button>
-  </form>
-
   
-  <div id="error"></div>
-  <div id="output"></div>
 
   <script>
     function handleDashboard() {
