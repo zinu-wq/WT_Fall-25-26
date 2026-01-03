@@ -33,10 +33,7 @@
       background-color: #0055aa;
     }
 
-    #error {
-      color: red;
-      margin-top: 20px;
-    }
+    
 
     #output {
       color: #003366;
