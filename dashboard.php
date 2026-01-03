@@ -62,13 +62,13 @@
     <button type="submit">Go to Dashboard</button>
   </form>
 
-  <!-- Output / Dashboard Buttons -->
+  
   <div id="error"></div>
   <div id="output"></div>
 
   <script>
     function handleDashboard() {
-      // Get input values
+    
       let name = document.getElementById("name").value.trim();
       let email = document.getElementById("email").value.trim();
       let phone = document.getElementById("phone").value.trim();
@@ -76,11 +76,10 @@
       let errorDiv = document.getElementById("error");
       let outputDiv = document.getElementById("output");
 
-      // Clear previous messages
       errorDiv.innerHTML = "";
       outputDiv.innerHTML = "";
 
-      // Validation
+      
       if (name === "" || email === "" || phone === "") {
         errorDiv.innerHTML = "Please fill in all fields.";
         return false;
@@ -102,10 +101,10 @@
         <button onclick="goPage('review.php')">Review</button>
       `;
 
-      // Hide form
+      
       document.getElementById("guestForm").style.display = "none";
 
-      return false; // prevent form submit
+      return false;
     }
 
     function goPage(page) {
