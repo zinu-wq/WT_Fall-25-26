@@ -50,7 +50,7 @@
     
       
       
-      let phone = document.getElementById("phone").value.trim();
+      let phone = document.getElementById("phone").value.trim()
 
       let errorDiv = document.getElementById("error");
       let outputDiv = document.getElementById("output");
