@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guest Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f0f8ff;
+      text-align: center;
+    }
+
+    h2 {
+      color: #003366;
+      margin-bottom: 30px;
+    }
+
+    button {
+      width: 300px;
+      padding: 12px;
+      margin: 10px auto;
+      display: block;
+      background-color: #4e86bf;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0055aa;
+    }
+
+    #error {
+      color: red;
+      margin-top: 20px;
+    }
+
+    #output {
+      color: #003366;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Guest Dashboard</h2>
+
+  <form id="guestForm" onsubmit="return handleDashboard()">
+    <label>Name:</label>
+    <input type="text" id="name" placeholder="Enter your name" /><br>
+
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Enter your email" /><br>
+
+    <label>Phone:</label>
+    <input type="text" id="phone" placeholder="Enter your phone number" /><br>
+
+    <button type="submit">Go to Dashboard</button>
+  </form>
+
+  <!-- Output / Dashboard Buttons -->
+  <div id="error"></div>
+  <div id="output"></div>
+
+  <script>
+    function handleDashboard() {
+      // Get input values
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let phone = document.getElementById("phone").value.trim();
+
+      let errorDiv = document.getElementById("error");
+      let outputDiv = document.getElementById("output");
+
+      // Clear previous messages
+      errorDiv.innerHTML = "";
+      outputDiv.innerHTML = "";
+
+      // Validation
+      if (name === "" || email === "" || phone === "") {
+        errorDiv.innerHTML = "Please fill in all fields.";
+        return false;
+      }
+
+      let phoneRegex = /^[0-9]{7,15}$/;
+      if (!phoneRegex.test(phone)) {
+        errorDiv.innerHTML = "Phone must be numeric and 7-15 digits.";
+        return false;
+      }
+
+      // Dashboard Buttons
+      outputDiv.innerHTML = `
+        <h3>Welcome</h3>
+        <button onclick="goPage('room_booking.php')">Room Booking</button>
+        <button onclick="goPage('payment.php')">Payment</button>
+        <button onclick="goPage('booking_status.php')">Booking Status</button>
+        <button onclick="goPage('profile.php')">Profile</button>
+        <button onclick="goPage('review.php')">Review</button>
+      `;
+
+      // Hide form
+      document.getElementById("guestForm").style.display = "none";
+
+      return false; // prevent form submit
+    }
+
+    function goPage(page) {
+      window.location.href = page;
+    }
+  </script>
+
+</body>
+</html>
