@@ -32,9 +32,6 @@
     button:hover {
       background-color: #0055aa;
     }
-
-    
-
     #output {
       color: #003366;
       margin-top: 20px;
@@ -63,7 +60,7 @@
       outputDiv.innerHTML = "";
 
       
-      if (name === "" || email === "" || phone === "") {
+      
         errorDiv.innerHTML = "Please fill in all fields.";
         return false;
       }
