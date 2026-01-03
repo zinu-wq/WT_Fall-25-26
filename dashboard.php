@@ -11,7 +11,7 @@
     }
 
     h2 {
-      color: #003366;
+      color:#003366;
       margin-bottom: 30px;
     }
 
@@ -77,6 +77,7 @@
       let outputDiv = document.getElementById("output");
 
       errorDiv.innerHTML = "";
+
       outputDiv.innerHTML = "";
 
       
