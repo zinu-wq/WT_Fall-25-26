@@ -49,7 +49,7 @@
     function handleDashboard() {
     
       
-      let email = document.
+      
       let phone = document.getElementById("phone").value.trim();
 
       let errorDiv = document.getElementById("error");
