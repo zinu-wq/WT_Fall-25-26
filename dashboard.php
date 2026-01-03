@@ -48,7 +48,7 @@
   <script>
     function handleDashboard() {
     
-      let name = document.getElementById("name").value.trim();
+      let name = document.getElementById
       let email = document.getElementById("email").value.trim();
       let phone = document.getElementById("phone").value.trim();
 
