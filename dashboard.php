@@ -21,7 +21,7 @@
       margin: 10px auto;
       display: block;
       background-color: #4e86bf;
-      color: white;
+      color: black;
       border: none;
       border-radius: 5px;
       cursor: pointer;
