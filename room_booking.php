@@ -109,7 +109,7 @@ if (isset($_POST['book'])) {
 ?>
 <script>
 
-// JS: Instant preview
+
 const searchInput = document.getElementById('searchInput');
 const checkinInput = document.getElementById('checkinInput');
 const checkoutInput = document.getElementById('checkoutInput');
