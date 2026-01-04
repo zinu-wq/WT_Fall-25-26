@@ -54,6 +54,8 @@
       window.location.href=page;
     }
   </script>
+</body>
+</html>
 
 
 
