@@ -45,6 +45,8 @@
   <button onclick="gopage('room_booking.php')">Room Booking</button>
   <button onclick="gopage('payment.php')">payment</button>
   <button onclick="gopage('profile.php')">Profile</button>
+  <button onclick="gopage('profile.php')">profile</button>
+  
 
 
   
