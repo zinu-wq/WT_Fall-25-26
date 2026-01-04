@@ -47,7 +47,9 @@
   <button onclick="gopage('profile.php')">Profile</button>
   <button onclick="gopage('profile.php')">profile</button>
   <button onclick="gopage('review.php')">review</button>
-  
+
+  <div id="output"></div>
+
 
 
 
