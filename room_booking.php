@@ -70,14 +70,14 @@
         <option>Deluxe</option>
     </select>
 
-    <!-- Check-in & Check-out -->
+    
     <label>Check-in Date</label>
     <input type="date" name="checkin" required>
 
     <label>Check-out Date</label>
     <input type="date" name="checkout" required>
 
-    <!-- Preferred Room -->
+    <label>Preferred Room</label>
     <select name="preference" required>
         <option value="">Preferred Room</option>
         <option>AC</option>
