@@ -53,6 +53,7 @@
     function gopage(page) {
       window.location.href=page;
     }
+  </script>
 
 
 
