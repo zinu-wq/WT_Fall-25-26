@@ -47,14 +47,9 @@
 
   <script>
     function handleDashboard() {
-    
-      
-      
-    
-     
-      let outputDiv = document.getElementById("output");
 
-      errorDiv.innerHTML = "";
+
+     
 
       outputDiv.innerHTML = "";
 
