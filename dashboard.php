@@ -42,31 +42,13 @@
 <body>
 
   <h2>Guest Dashboard</h2>
+  <button onclick="gopage('room_booking.php')">Room Booking</button>
+  <button onclick="gopage('payment.php')">payment</button>
+  <button onclick="gopage('profile.php')">Profile</button>
+
 
   
 
  
 
-      // Dashboard Buttons
-      outputDiv.innerHTML = `
-        <h3>Welcome</h3>
-        <button onclick="goPage('room_booking.php')">Room Booking</button>
-        <button onclick="goPage('payment.php')">Payment</button>
-        <button onclick="goPage('booking_status.php')">Booking Status</button>
-        <button onclick="goPage('profile.php')">Profile</button>
-        <button onclick="goPage('review.php')">Review</button>
-      `;
-
-      
-      document.getElementById("guestForm").style.display = "none";
-
-      return false;
-    }
-
-    function goPage(page) {
-      window.location.href = page;
-    }
-  </script>
-
-</body>
-</html>
+       
