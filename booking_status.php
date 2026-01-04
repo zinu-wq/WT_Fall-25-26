@@ -78,12 +78,11 @@ echo "</p>";
 echo "</div>";
 ?>
 
-<!-- Cancel Booking Form -->
+
 <form method="post" id="cancelForm">
     <button type="button" id="cancelBtn">Cancel Booking</button>
 </form>
 
-<!-- Optional: simulate status update -->
 <form method="post" id="updateForm">
     <select name="status" id="statusSelect">
         <option>Pending</option>
@@ -95,14 +94,14 @@ echo "</div>";
 </form>
 
 <script>
-// JS: Cancel Booking
+
 document.getElementById('cancelBtn').addEventListener('click', function(){
     document.getElementById('statusText').innerText = 'Cancelled';
     document.getElementById('msg').innerText = 'Your booking has been cancelled!';
     document.getElementById('cancelForm').submit();
 });
 
-// JS: Update Status from dropdown
+
 document.getElementById('updateBtn').addEventListener('click', function(){
     var selected = document.getElementById('statusSelect').value;
     document.getElementById('statusText').innerText = selected;
