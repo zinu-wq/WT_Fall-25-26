@@ -51,8 +51,8 @@
   <div id="output"></div>
   <script>
     function gopage(page) {
-      window.location
-  
+      window.location.href=page;
+    }
 
 
 
