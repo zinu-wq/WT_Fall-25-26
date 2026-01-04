@@ -51,7 +51,7 @@
       
       
     
-      let errorDiv = document.getElementById("error");
+     
       let outputDiv = document.getElementById("output");
 
       errorDiv.innerHTML = "";
