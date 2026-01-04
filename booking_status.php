@@ -56,16 +56,16 @@
 <h2>Booking Status</h2>
 
 <?php
-// Default status
+
 $status = "Pending";
 
-// Handle Cancel Booking
+
 if(isset($_POST['cancel'])){
     $status = "Cancelled";
     $message = "Your booking has been cancelled!";
 }
 
-// Handle Status Update (for demo)
+
 if(isset($_POST['update'])){
     $status = $_POST['status'];
 }

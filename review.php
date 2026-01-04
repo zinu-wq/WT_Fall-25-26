@@ -78,7 +78,7 @@ if(isset($_POST['submitBtn'])){
 ?>
 
 <script>
-// JS: Instant preview
+
 const ratingInput = document.getElementById('ratingInput');
 const commentInput = document.getElementById('commentInput');
 const ratingPreview = document.getElementById('ratingPreview');
