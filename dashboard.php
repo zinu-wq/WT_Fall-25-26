@@ -49,6 +49,10 @@
   <button onclick="gopage('review.php')">review</button>
 
   <div id="output"></div>
+  <script>
+    function gopage(page) {
+      window.location
+  
 
 
 
