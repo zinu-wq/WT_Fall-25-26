@@ -45,25 +45,7 @@
 
   
 
-  <script>
-    function handleDashboard() {
-
-
-     
-
-      outputDiv.innerHTML = "";
-
-      
-      
-        errorDiv.innerHTML = "Please fill in all fields.";
-        return false;
-      }
-
-      let phoneRegex = /^[0-9]{7,15}$/;
-      if (!phoneRegex.test(phone)) {
-        errorDiv.innerHTML = "Phone must be numeric and 7-15 digits.";
-        return false;
-      }
+ 
 
       // Dashboard Buttons
       outputDiv.innerHTML = `
