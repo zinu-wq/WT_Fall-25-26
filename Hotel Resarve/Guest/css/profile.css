@@ -1,0 +1,80 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #f4f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.profile-container {
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 400px;
+  max-width: 90%;
+}
+
+.profile-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #003366;
+}
+
+.profile-container label {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #003366;
+}
+
+.profile-container input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #cfd8e3;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.profile-container input:focus {
+  outline: none;
+  border-color: #0055aa;
+  box-shadow: 0 0 0 2px rgba(0,85,170,0.2);
+}
+
+.profile-container button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0055aa, #003366);
+  transition: 0.3s;
+}
+
+.profile-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,85,170,0.3);
+}
+
+/* Output Box */
+#output {
+  margin-top: 18px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 14px;
+  background: rgba(0, 85, 170, 0.08);
+  color: #003366;
+  font-size: 14px;
+}
+#output h3 {
+  margin-top: 0;
+  color: #0055aa;
+}

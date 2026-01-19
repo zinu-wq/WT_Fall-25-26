@@ -1,0 +1,108 @@
+:root {
+  --bg-main: #f4f8ff;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --text-main: #003366;
+  --accent: #0055aa;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e6f0ff, #f4f8ff);
+
+  /* Flex for vertical stacking */
+  display: flex;
+  flex-direction: column;      /* h2, form, output stacked vertically */
+  align-items: center;         /* horizontal center */
+  justify-content: flex-start; /* start from top */
+  padding-top: 50px;           /* space from top */
+}
+
+/* Title */
+h2 {
+  position: static;             /* absolute remove */
+  text-align: center;
+  width: auto;
+  color: var(--text-main);
+  letter-spacing: 1px;
+  margin-bottom: 30px;          /* space between title and form */
+}
+
+/* Form Card */
+form {
+  width: 380px;
+  padding: 30px 32px;
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+/* Inputs & Select */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #cfd8e3;
+  font-size: 14px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(0, 85, 170, 0.2);
+}
+
+/* Button */
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0055aa, #003366);
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 85, 170, 0.4);
+}
+
+/* Output Box */
+#output {
+  width: 380px;                  /* same as form */
+  margin: 20px auto 0 auto;      /* centered below form */
+  padding: 15px;
+  text-align: center;
+  border-radius: 14px;
+  background: rgba(0, 85, 170, 0.08);
+  color: var(--text-main);
+  font-size: 14px;
+}
+
+/* Output heading */
+#output h3 {
+  margin-top: 0;
+  color: var(--accent);
+}

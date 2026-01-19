@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Reservation</title>
+
+    <!-- ===== CSS ===== -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+        .box {
+            width: 400px;
+            margin: 50px auto;
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 { text-align: center; }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type=submit] {
+            background: #2c7be5;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+        .success {
+            color: green;
+            text-align: center;
+        }
+    </style>
+
+    <!-- ===== JavaScript ===== -->
+    <script>
+        function validateForm() {
+            let f = document.forms["guestForm"];
+
+            if (
+                f.name.value === "" ||
+                f.email.value === "" ||
+                f.phone.value === "" ||
+                f.checkin.value === "" ||
+                f.checkout.value === "" ||
+                f.rooms.value === ""
+            ) {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            if (f.phone.value.length < 11) {
+                alert("Phone number must be at least 11 digits");
+                return false;
+            }
+
+            if (f.checkout.value <= f.checkin.value) {
+                alert("Check-out date must be after Check-in date");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+<?php
+/* ===== PHP ===== */
+session_start();
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Name
+    if (empty($_POST["name"])) {
+        $nameErr = "Name is required";
+    } else {
+        $name = clean($_POST["name"]);
+        if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            $nameErr = "Only letters and spaces allowed";
+        }
+    }
+
+    // Email
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+    } else {
+        $email = clean($_POST["email"]);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+        }
+    }
+
+    // Phone
+    if (empty($_POST["phone"])) {
+        $phoneErr = "Phone is required";
+    } else {
+        $phone = clean($_POST["phone"]);
+    }
+
+    // Dates
+    if (empty($_POST["checkin"]) || empty($_POST["checkout"])) {
+        $dateErr = "Check-in & Check-out required";
+    } else {
+        $checkin = $_POST["checkin"];
+        $checkout = $_POST["checkout"];
+
+        if ($checkout <= $checkin) {
+            $dateErr = "Check-out must be after Check-in";
+        } else {
+            $d1 = new DateTime($checkin);
+            $d2 = new DateTime($checkout);
+            $days = $d1->diff($d2)->days;
+        }
+    }
+
+    // Rooms
+    if (empty($_POST["rooms"]) || $_POST["rooms"] <= 0) {
+        $roomErr = "Enter valid number of rooms";
+    } else {
+        $rooms = $_POST["rooms"];
+    }
+
+    // Save guest session
+    if (
+        empty($nameErr) && empty($emailErr) &&
+        empty($phoneErr) && empty($dateErr) && empty($roomErr)
+    ) {
+        $_SESSION["guest"] = [
+            "name" => $name,
+            "email" => $email,
+            "phone" => $phone,
+            "checkin" => $checkin,
+            "checkout" => $checkout,
+            "days" => $days,
+            "rooms" => $rooms,
+            "role" => "guest"
+        ];
+    }
+}
+
+function clean($data) {
+    return htmlspecialchars(trim($data));
+}
+?>
+
+<div class="box">
+    <h2>Guest Booking</h2>
+
+    <form name="guestForm" method="post" onsubmit="return validateForm()">
+
+        Name:
+        <input type="text" name="name" value="<?= $name ?>">
+        <div class="error"><?= $nameErr ?></div>
+
+        Email:
+        <input type="text" name="email" value="<?= $email ?>">
+        <div class="error"><?= $emailErr ?></div>
+
+        Phone:
+        <input type="text" name="phone" value="<?= $phone ?>">
+        <div class="error"><?= $phoneErr ?></div>
+
+        Check-in Date:
+        <input type="date" name="checkin" value="<?= $checkin ?>">
+
+        Check-out Date:
+        <input type="date" name="checkout" value="<?= $checkout ?>">
+        <div class="error"><?= $dateErr ?></div>
+
+        Number of Rooms:
+        <input type="number" name="rooms" min="1" value="<?= $rooms ?>">
+        <div class="error"><?= $roomErr ?></div>
+
+        <input type="submit" value="Proceed as Guest">
+    </form>
+
+    <?php if ($_SERVER["REQUEST_METHOD"]=="POST" &&
+        empty($nameErr) && empty($emailErr) &&
+        empty($phoneErr) && empty($dateErr) && empty($roomErr)) { ?>
+        
+        <p class="success">
+            Guest Booking Successful <br>
+            Stay Duration: <?= $days ?> days
+        </p>
+    <?php } ?>
+</div>
+
+</body>
+</html>

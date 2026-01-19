@@ -1,0 +1,139 @@
+:root {
+  --bg-main: #f4f8ff;
+  --bg-card: rgba(255,255,255,0.75);
+  --text-main: #003366;
+  --accent: #0055aa;
+}
+
+body.dark {
+  --bg-main: #0f172a;
+  --bg-card: rgba(30,41,59,0.85);
+  --text-main: #e2e8f0;
+  --accent: #38bdf8;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  background: var(--bg-main);
+  transition: 0.4s;
+}
+
+.header {
+  background: linear-gradient(135deg, #002b5c, #0055aa);
+  color: white;
+  padding: 16px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.header h2 {
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.header-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.toggle {
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.2);
+  font-size: 13px;
+}
+
+.logout {
+  background: #ff4d4d;
+  padding: 7px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background: #e60000;
+}
+
+.container {
+  display: flex;
+  min-height: calc(100vh - 70px);
+}
+
+.sidebar {
+  width: 240px;
+  padding: 28px 18px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: 6px 0 20px rgba(0,0,0,0.1);
+}
+
+body.dark .sidebar {
+  background: rgba(30,41,59,0.9);
+}
+
+.sidebar h3 {
+  text-align: center;
+  color: var(--text-main);
+  margin-bottom: 25px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0;
+  background: linear-gradient(135deg, #4e86bf, #6fa8dc);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.35s;
+}
+
+.sidebar button:hover {
+  transform: translateX(6px);
+  box-shadow: 0 8px 18px rgba(0,85,170,0.4);
+}
+
+.sidebar button.active {
+  background: linear-gradient(135deg, #0055aa, #003366);
+  box-shadow: 0 0 0 3px rgba(0,85,170,0.25);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.dashboard {
+  width: 430px;
+  padding: 45px;
+  background: var(--bg-card);
+  backdrop-filter: blur(15px);
+  border-radius: 26px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+  text-align: center;
+  animation: fade 0.8s ease;
+  color: var(--text-main);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
