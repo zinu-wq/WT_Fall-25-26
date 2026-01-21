@@ -11,25 +11,25 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: linear-gradient(135deg, #e6f0ff, #f4f8ff);
 
-  /* Flex for vertical stacking */
+  
   display: flex;
-  flex-direction: column;      /* h2, form, output stacked vertically */
-  align-items: center;         /* horizontal center */
-  justify-content: flex-start; /* start from top */
-  padding-top: 50px;           /* space from top */
+  flex-direction: column;      
+  align-items: center;        
+  justify-content: flex-start; 
+  padding-top: 50px;           
 }
 
-/* Title */
+
 h2 {
-  position: static;             /* absolute remove */
+  position: static;             
   text-align: center;
   width: auto;
   color: var(--text-main);
   letter-spacing: 1px;
-  margin-bottom: 30px;          /* space between title and form */
+  margin-bottom: 30px;          
 }
 
-/* Form Card */
+
 form {
   width: 380px;
   padding: 30px 32px;
@@ -39,7 +39,7 @@ form {
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
 }
 
-/* Labels */
+
 label {
   display: block;
   margin-top: 14px;
@@ -47,7 +47,7 @@ label {
   color: var(--text-main);
 }
 
-/* Inputs & Select */
+
 input,
 select,
 textarea {
@@ -61,7 +61,7 @@ textarea {
   box-sizing: border-box;
 }
 
-/* Focus effect */
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -70,7 +70,7 @@ textarea:focus {
   box-shadow: 0 0 0 2px rgba(0, 85, 170, 0.2);
 }
 
-/* Button */
+
 button {
   width: 100%;
   margin-top: 20px;
@@ -89,10 +89,10 @@ button:hover {
   box-shadow: 0 10px 20px rgba(0, 85, 170, 0.4);
 }
 
-/* Output Box */
+
 #output {
-  width: 380px;                  /* same as form */
-  margin: 20px auto 0 auto;      /* centered below form */
+  width: 380px;                  
+  margin: 20px auto 0 auto;      
   padding: 15px;
   text-align: center;
   border-radius: 14px;
@@ -101,7 +101,7 @@ button:hover {
   font-size: 14px;
 }
 
-/* Output heading */
+
 #output h3 {
   margin-top: 0;
   color: var(--accent);

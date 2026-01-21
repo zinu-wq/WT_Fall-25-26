@@ -1,4 +1,4 @@
-// Optional JS for live preview or extra behavior
+
 const ratingInput = document.getElementById('ratingInput');
 const commentInput = document.getElementById('commentInput');
 

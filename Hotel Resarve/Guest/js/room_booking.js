@@ -1,4 +1,4 @@
-// Optional: live preview if you want
+
 const searchInput = document.querySelector('select[name="search_room"]');
 const checkinInput = document.querySelector('input[name="checkin"]');
 const checkoutInput = document.querySelector('input[name="checkout"]');

@@ -4,7 +4,7 @@ $guest_name = $_SESSION['guest_name'] ?? 'Guest';
 $page = $_GET['page'] ?? 'dashboard';
 
 if($page == 'room_booking'){
-    include '../php/room_booking.php';  // PHP controller include
+    include '../php/room_booking.php';  
 } elseif($page == 'payment'){
     include '../php/payment.php';
 } elseif($page == 'booking_status'){
